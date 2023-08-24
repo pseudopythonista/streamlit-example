@@ -20,5 +20,6 @@ create_share_link(dict({'title': 'streamlit-js-eval', 'url': 'https://github.com
 
 if st.checkbox("Check my location"):
     loc = get_geolocation()
-    st.write(loc)
+    st.write(loc['latitude'])
+    st.write(loc['longitude'])
     st.write(f"Your coordinates are {loc}")
