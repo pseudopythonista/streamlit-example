@@ -3,9 +3,7 @@ from bokeh.models.widgets import Button
 from bokeh.models import CustomJS
 from streamlit_bokeh_events import streamlit_bokeh_events
 
-st.write("hi")
-
-loc_button = st.button(label="Get Location")
+loc_button = Button(label="Get Location")
 loc_button.js_on_event("button_click", CustomJS(code="""
     navigator.geolocation.getCurrentPosition(
         (loc) => {
@@ -20,3 +18,7 @@ result = streamlit_bokeh_events(
     refresh_on_update=False,
     override_height=75,
     debounce_time=0)
+
+if result:
+    if "GET_LOCATION" in result:
+        st.write(result.get("GET_LOCATION"))
