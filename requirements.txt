@@ -1,3 +1,1 @@
-streamlit
-bokeh
-streamlit_bokeh_events
+streamlit_js_eval
